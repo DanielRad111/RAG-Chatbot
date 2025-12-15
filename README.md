@@ -1,64 +1,118 @@
-# AI Document Assistant (RAG)
-# RAG Project 📄🤖
+# 🤖 RAG Chatbot
 
-A Retrieval-Augmented Generation (RAG) application that allows you to chat with your PDF documents using Google's Gemini Pro model.
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)](https://streamlit.io/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 
-## Features
-- 📤 **PDF Upload**: Drag and drop support.
-- 🧠 **Smart Context**: Uses ChromaDB to find relevant info.
-- 💬 **Interactive Chat**: Ask questions about your documents.
-- ⚡ **Fast & Efficient**: Built with Streamlit and Gemini.
+A **Retrieval-Augmented Generation (RAG)** chatbot that lets you chat with your PDF documents using Google's Gemini AI.
 
-## 🚀 Quick Start (Python)
+---
 
-The easiest way to run the app:
+## ✨ Features
 
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- 📄 **PDF Upload** - Drag & drop your documents
+- 🧠 **Smart Context** - ChromaDB vector store for semantic search
+- 💬 **Natural Chat** - Ask questions in plain English
+- ⚡ **Fast Responses** - Powered by Gemini 2.5 Flash
+- 🐳 **Docker Ready** - One command deployment
+- 📊 **Document Stats** - Track uploaded files & chunks
 
-2. **Configure API Key**:
-   - Open `config.py` and add your Google API Key.
+---
 
-3. **Run the App**:
-   ```bash
-   streamlit run main.py
-   ```
-   
-   Access at `http://localhost:8501`.
+## 🚀 Quick Start
 
-## 🐳 Docker Deployment (Optional)
+### Option 1: Docker (Recommended)
 
-To run the application in a container (Deployment Ready/CV Ready):
+```bash
+# Clone the repo
+git clone https://github.com/DanielRad111/RAG-Chatbot.git
+cd RAG-Chatbot
 
-*Instructions coming soon...*
-for production deployment.
+# Configure API key
+cp .env.example .env
+# Edit .env and add your Google API key
 
-## How to Run
+# Run with Docker
+docker-compose up --build -d
+```
 
-### Option 1: Next.js App (Docker) - Recommended
-This version is production-ready and runs in a container.
+🌐 Open **http://localhost:8501**
 
-1. Go to the Next.js directory:
-   ```bash
-   cd rag-nextjs
-   ```
-2. Start with Docker Compose:
-   ```bash
-   docker-compose up --build -d
-   ```
-3. Open `http://localhost:3000`.
+### Option 2: Local Development
 
-### Option 2: Python Streamlit App
-This version runs locally using Python.
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-1. Install requirements:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Run the app:
-   ```bash
-   streamlit run main.py
-   ```
-3. Open `http://localhost:8501`.
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure API key
+cp config.example.py config.py
+# Edit config.py and add your Google API key
+
+# Run the app
+streamlit run main.py
+```
+
+---
+
+## 🔑 Get Your API Key
+
+1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
+2. Click "Create API Key"
+3. Copy the key to your `.env` or `config.py` file
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Streamlit** | Web UI Framework |
+| **Google Gemini** | LLM & Embeddings |
+| **ChromaDB** | Vector Database |
+| **LangChain** | Document Processing |
+| **Docker** | Containerization |
+
+---
+
+## 📁 Project Structure
+
+```
+RAG-Chatbot/
+├── main.py              # Main application
+├── config.py            # API keys (gitignored)
+├── requirements.txt     # Python dependencies
+├── Dockerfile           # Container definition
+├── docker-compose.yml   # Docker orchestration
+├── docs/                # Uploaded PDFs
+└── README.md
+```
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first.
+
+---
+
+## 📝 License
+
+[MIT](LICENSE)
+
+---
+
+## 👤 Author
+
+**Daniel Rad**
+
+- GitHub: [@DanielRad111](https://github.com/DanielRad111)
+
+---
+
+<p align="center">
+  Made with ❤️ and ☕
+</p>
